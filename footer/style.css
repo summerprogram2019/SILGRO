@@ -1,0 +1,80 @@
+#myAccount {
+	position: absolute;
+	right: 25px;
+	color: black;
+	text-decoration: none;
+}
+
+#profile {
+	width: 30px;
+	position: absolute;
+	right: 120px;
+}
+
+body {
+	height: 100%;
+	min-height: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.lists {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.row {
+	margin: 20px;
+	margin-left: 100px;
+	color: black;
+}
+
+#compLogo {
+	width: 200px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 40px;
+}
+
+.socials {
+	height: 44px;
+	padding: 3px;
+}
+
+#youtube {
+	height: 50px;
+	padding: 0;
+	margin: 0;
+}
+
+#lastBox {
+	margin: 0;
+	padding: 4px;
+	background-color: black;
+}
+
+#lastLine {
+	color: white;
+	margin-bottom: 0;
+	margin-left: 45px;
+	padding: 5px;
+	font-size: 12px;
+}
