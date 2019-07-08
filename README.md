@@ -1,2 +1,0 @@
-# SILGRO
-cash money
