@@ -1,0 +1,179 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="SILGRO Share" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href={% static "style.css" %}>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <title>New Listing</title>
+
+  </head>
+
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  		<a class="navbar-brand" href="aboutUs.html">SILGRO share</a>
+    	<img src={% static "images/profile.png" %} alt="profile pic" id="profile">
+	  	<a href="#" id="myAccount">My Account</a>
+	</nav>
+    <h1 id="heading">Create a new Listing</h1><br>
+     <form action="" method="post">
+         {% csrf_token %}
+    <nav id="newList">
+        <form id="wrap">
+                <br>Listing Name<br>
+                <input type="text" name="title" maxlength="25" placeholder="Title" size="67"><br>
+                <br>
+                <br>Category<br>
+                <form>
+                    <input type="checkbox" name="check[]" value="Apparel"> <img src="{% static "images/apparel.png" %}" class="icon" /> Apparel<br>
+                    <input type="checkbox" name="check[]" value="Books"> <img src="{% static "images/books.png" %}" class="icon"> Books<br>
+                    <input type="checkbox" name="check[]" value="Electronics"> <img src={% static "images/electronics.png" %} class="icon"> Electronics<br>
+                    <input type="checkbox" name="check[]" value="Home"> <img src={% static "images/home.png" %} class="icon"> Home & Garden<br>
+                    <input type="checkbox" name="check[]" value="Sports"> <img src={% static "images/sports.png" %} class="icon"> Sports & Fitness<br>
+                    <input type="checkbox" name="check[]" value="Transport"> <img src={% static "images/transport.png" %} class="icon"> Transport<br>
+                </form><br>
+
+                <br>Description<br>
+                <textarea  name="description"  maxlength="1000" placeholder="Enter a description of your item" rows="10" cols="80" id="description"></textarea><br>
+                <br>Rate: <input type="text" name="rate" maxlength="6" width="10"> / day<br>
+                <div id="pls">
+                <br>Availability<br>
+                Date: <input type="text" id="datepicker" name="availability">
+                <!-- <br><table border="3" cellspacing="3" cellpadding="3" id="calendar">
+                    <tr>
+                        <td colspan="7" align="center">
+                            <b>July 2019</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">Mon</td>
+                        <td align="center">Tue</td>
+                        <td align="center">Wed</td>
+                        <td align="center">Thu</td>
+                        <td align="center">Fri</td>
+                        <td align="center">Sat</td>
+                        <td align="center">Sun</td>
+                    </tr>
+                    <tr>
+                        <td align="center">1</td>
+                        <td align="center">2</td>
+                        <td align="center">3</td>
+                        <td align="center">4</td>
+                        <td align="center">5</td>
+                        <td align="center">6</td>
+                        <td align="center">7</td>
+                    </tr>
+                    <tr>
+                        <td align="center">8</td>
+                        <td align="center">9</td>
+                        <td align="center">10</td>
+                        <td align="center">11</td>
+                        <td align="center">12</td>
+                        <td align="center">13</td>
+                        <td align="center">14</td>
+                    </tr>
+                    <tr>
+                        <td align="center">15</td>
+                        <td align="center">16</td>
+                        <td align="center">17</td>
+                        <td align="center">18</td>
+                        <td align="center">19</td>
+                        <td align="center">20</td>
+                        <td align="center">21</td>
+                    </tr>
+                    <tr>
+                        <td align="center">22</td>
+                        <td align="center">23</td>
+                        <td align="center">24</td>
+                        <td align="center">25</td>
+                        <td align="center">26</td>
+                        <td align="center">27</td>
+                        <td align="center">28</td>
+                    </tr>
+                    <tr>
+                        <td align="center">29</td>
+                        <td align="center">30</td>
+                        <td align="center">31</td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                        <td align="center"></td>
+                    </tr>
+                </table> -->
+                </div>
+                <div id="rest">
+                    <br>Add Photos:<br>
+                    <input type="file" name="img" multiple="10" onchange="readURL(this);" id="back"><br>
+                    Choose up to 10 .jpeg .img or .png files<br>
+                    <img src="http://placehold.it/180" id="blah" alt="your image"> <br>
+
+                    <br>
+                    <input type="submit" name="submit">
+
+                </div>
+        </form>
+    </nav>
+     </form>
+    <footer>
+    	<div class="row">
+    		<div class="column" id="first">
+    			<h2>Categories</h2>
+    			<ul class="lists">
+    				<li><a href="#">Apparel</a></li>
+    				<li><a href="#">Books</a></li>
+    				<li><a href="#">Electronics</a></li>
+       				<li><a href="#">Home & Garden</a></li>
+       				<li><a href="#">Sports & Fitness</a></li>
+    				<li><a href="#">Transport</a></li>
+    			</ul>
+    		</div>
+    		<div class="column">
+    			<h2>For You</h2>
+    			<ul class="lists">
+    				<li><a href="#">New Account</a></li>
+    				<li><a href="#">New Listing</a></li>
+    				<li><a href="#">Current Listings</a></li>
+    				<li><a href="#">My Account</a></li>
+    				<li><a href="#">My History</a></li>
+    			</ul>
+    		</div>
+    		<div class="column">
+    			<img src={% static "images/logo.png" %} alt="company logo" id="compLogo">
+    			<br>
+    			<img src={% static "images/facebook.png" %} alt="facebook logo" class="socials">
+    			<img src={% static "images/instagram.png" %} alt="instagram logo" class="socials">
+    			<img src={% static "images/twitter.png" %} alt="twitter logo" class="socials">
+    			<img src={% static "images/youtube.png" %} alt="youtube logo" id="youtube">
+    		</div>
+    		<div class="column">
+    			<h2>About</h2>
+    			<ul class="lists">
+    				<li><a href="#">About Us</a></li>
+    				<li><a href="#">Contact Us</a></li>
+    				<li><a href="#">FAQs</a></li>
+    				<li><a href="#">Policy</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    	<br>
+    	<div id="lastBox">
+    		<p id="lastLine">Copyright © 2019 SILGRO Technologies. All Rights Reserved.</p>
+    	</div>
+    </footer>
+
+    <script src={% static "https://code.jquery.com/jquery-1.12.4.js" %}></script>
+    <script src={% static "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %}></script>
+    <script type="text/javascript" src={% static "myScript.js" %}></script>
+    <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+    </script>
+  </body>
+</html>

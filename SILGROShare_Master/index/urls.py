@@ -10,5 +10,7 @@ urlpatterns = [
 
     #下载文件
     path('download.html',views.download),
+    #newListing
+    path('newListing.html',views.newListing)
 
 ]
