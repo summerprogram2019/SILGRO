@@ -4,6 +4,10 @@ import  csv
 from django.http import HttpResponse
 from .models import *
 from .form import *
+#from imgTest.views import uploadImg, showImg
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 def index(request):
     if request.method == 'GET':
@@ -40,15 +44,28 @@ def newListing(request):
         description = request.POST.get('description')
         availability = request.POST.get('availability')
         rate = request.POST.get('rate')
-        images = request.POST.get('img')
+        img = Img(img_url=request.FILES.get('img'))
+        images = request.FILES.get('img')
+        img.save()
         db = Listing()
         db.title = title
         db.availability = availability
         db.category = category
         db.description = description
         db.rate = rate
-        db.images = images
+       # db.images = images
         db.save()
+        return HttpResponse("Submit Successfully!")
+
+def navbar(request):
+    if request.method == 'GET':
+        imgs = Img.objects.all()
+        return render(request, 'navbar.html', context=locals(), status=500)
+    else:
+        category = request.POST.get('category')
+        search = request.POST.get('search')
+        startDate = request.POST.get('startDate')
+        endDate = request.POST.get('endDate')
+        location = request.POST.get('location')
+        result = Listing.objects.filter(title=category)
         return HttpResponse('Submit Successfully!')
-
-

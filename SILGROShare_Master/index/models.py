@@ -40,6 +40,9 @@ class Listing(models.Model):
     description = models.TextField(max_length=1000)
     availability = models.DateField()
     rate = models.IntegerField()
-    images = models.ImageField()
+    images = models.ImageField(upload_to='ListingPicture')
     # listing display information
     user_rating = models.IntegerField(max_length=2, default=0)
+
+class Img(models.Model):
+    img_url = models.ImageField(upload_to='img')
