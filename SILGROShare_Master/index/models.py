@@ -36,10 +36,10 @@ class UserFinancial(models.Model):
 class Listing(models.Model):
     # create new listing details
     title = models.TextField(max_length=50)
-    description = models.TextField()
+    category = models.CharField(max_length=2022)
+    description = models.TextField(max_length=1000)
     availability = models.DateField()
     rate = models.IntegerField()
     images = models.ImageField()
-
     # listing display information
     user_rating = models.IntegerField(max_length=2, default=0)
