@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path,include
 from . import  views#important
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('', views.index),
@@ -11,6 +13,8 @@ urlpatterns = [
     #下载文件
     path('download.html',views.download),
     #newListing
-    path('newListing.html',views.newListing)
+    path('newListing.html',views.newListing),
+    #navbar
+    path('navbar.html',views.navbar)
 
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

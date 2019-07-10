@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href={% static "style.css" %}>
+    <link rel="stylesheet" type="text/css" href={% static "createListing/style.css" %}>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -18,7 +18,7 @@
   <body>
   	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   		<a class="navbar-brand" href="aboutUs.html">SILGRO share</a>
-    	<img src={% static "images/profile.png" %} alt="profile pic" id="profile">
+    	<img src={% static "createListing/images/profile.png" %} alt="profile pic" id="profile">
 	  	<a href="#" id="myAccount">My Account</a>
 	</nav>
     <h1 id="heading">Create a new Listing</h1><br>
@@ -31,12 +31,12 @@
                 <br>
                 <br>Category<br>
                 <form>
-                    <input type="checkbox" name="check[]" value="Apparel"> <img src="{% static "images/apparel.png" %}" class="icon" /> Apparel<br>
-                    <input type="checkbox" name="check[]" value="Books"> <img src="{% static "images/books.png" %}" class="icon"> Books<br>
-                    <input type="checkbox" name="check[]" value="Electronics"> <img src={% static "images/electronics.png" %} class="icon"> Electronics<br>
-                    <input type="checkbox" name="check[]" value="Home"> <img src={% static "images/home.png" %} class="icon"> Home & Garden<br>
-                    <input type="checkbox" name="check[]" value="Sports"> <img src={% static "images/sports.png" %} class="icon"> Sports & Fitness<br>
-                    <input type="checkbox" name="check[]" value="Transport"> <img src={% static "images/transport.png" %} class="icon"> Transport<br>
+                    <input type="checkbox" name="check[]" value="Apparel"> <img src="{% static "createListing/images/category/apparel.png" %}" class="icon" /> Apparel<br>
+                    <input type="checkbox" name="check[]" value="Books"> <img src="{% static "createListing/images/category/books.png" %}" class="icon"> Books<br>
+                    <input type="checkbox" name="check[]" value="Electronics"> <img src={% static "createListing/images/category/electronics.png" %} class="icon"> Electronics<br>
+                    <input type="checkbox" name="check[]" value="Home"> <img src={% static "createListing/images/category/home.png" %} class="icon"> Home & Garden<br>
+                    <input type="checkbox" name="check[]" value="Sports"> <img src={% static "createListing/images/category/sports.png" %} class="icon"> Sports & Fitness<br>
+                    <input type="checkbox" name="check[]" value="Transport"> <img src={% static "createListing/images/category/transport.png" %} class="icon"> Transport<br>
                 </form><br>
 
                 <br>Description<br>
@@ -144,12 +144,12 @@
     			</ul>
     		</div>
     		<div class="column">
-    			<img src={% static "images/logo.png" %} alt="company logo" id="compLogo">
+    			<img src={% static "footer-images/logo.png" %} alt="company logo" id="compLogo">
     			<br>
-    			<img src={% static "images/facebook.png" %} alt="facebook logo" class="socials">
-    			<img src={% static "images/instagram.png" %} alt="instagram logo" class="socials">
-    			<img src={% static "images/twitter.png" %} alt="twitter logo" class="socials">
-    			<img src={% static "images/youtube.png" %} alt="youtube logo" id="youtube">
+    			<img src={% static "footer-images/facebook.png" %} alt="facebook logo" class="socials">
+    			<img src={% static "footer-images/instagram.png" %} alt="instagram logo" class="socials">
+    			<img src={% static "footer-images/twitter.png" %} alt="twitter logo" class="socials">
+    			<img src={% static "footer-images/youtube.png" %} alt="youtube logo" id="youtube">
     		</div>
     		<div class="column">
     			<h2>About</h2>
@@ -169,7 +169,7 @@
 
     <script src={% static "https://code.jquery.com/jquery-1.12.4.js" %}></script>
     <script src={% static "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %}></script>
-    <script type="text/javascript" src={% static "myScript.js" %}></script>
+    <script type="text/javascript" src={% static "createListing/myScript.js" %}></script>
     <script>
       $( function() {
         $( "#datepicker" ).datepicker();
