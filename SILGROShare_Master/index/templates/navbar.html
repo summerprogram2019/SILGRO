@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- JQUERY UI -->
-        <link rel="stylesheet" href={% static "navbar/css/jquery-ui.css" %}>
-        <link rel="stylesheet" href={% static "navbar/css/jquery-ui-theme.css" %}>
+        <link rel="stylesheet" href={% static "css/jquery-ui.css" %}>
+        <link rel="stylesheet" href={% static "css/jquery-ui-theme.css" %}>
         <!-- Our style sheets -->
-        <link rel="stylesheet" href={% static "navbar/css/nav-bar.css" %}>
+        <link rel="stylesheet" href={% static "css/nav-bar.css" %}>
         <!-- INSERT CODE FOR PAGE NAME HERE -->
         <title>
         Nav Bar
@@ -22,13 +22,12 @@
                 <li><a href="#">Log in</a></li>
             </ul>
         </nav>
-        <form action="" method="post">
-         {% csrf_token %}
         <nav class="navbar" id="search-section">
-            <form>
+        <form action="" method="post">
+            {% csrf_token %}
                 <div id="search-inputs">
                     <div id="top-search">
-                            <select id="category" name="category">
+                            <select  id="category" name="category" >
                                 <option value="all">Category</option>
                                 <option value="Apparel">Apparel</option>
                                 <option value="Electronics">Electronics</option>
@@ -38,7 +37,7 @@
                                 <option value="Books">Books</option>
                             </select>
                         <input id="search-bar" type="text" name="search" placeholder="Search...">
-                        <button type="submit" id="search" value=""><img src={% static "navbar/images/magnifying-glass.png" %}></button>
+                        <button type="submit" id="search" value=""><img alt='Se' src={% static "images/magnifying-glass.png" %}></button>
                     </div>
                     <div id="bottom-search">
                         <input id="start-time" class="nav-date" type="text" name="startDate" placeholder="Start Date"/>
@@ -49,26 +48,24 @@
                 </div>
             </form>
         </nav>
-        </form>
     </header>
     <body>
         <div class="box">
         {% for item in imgs %}
-        <div class="image"> <img src="{{ item.img_url.url }}"><br/></div>
+        <div class="image"> <img alt = 'football' src="{{ item.img_url.url }}"><br/></div>
         {% endfor %}
         <div class="clear"></div>
         </div>
     </body>
     <footer>
-        
     <!-- JQUERY and JQUERY UI -->
-    <script src={% static "navbar/scripts/jquery.js" %}></script>
-    <script src={% static "navbar/scripts/jquery-ui.js" %}></script>
+    <script src={% static "scripts/jquery.js" %}></script>
+    <script src={% static "scripts/jquery-ui.js" %}></script>
     <!-- GOOGLE MAPS API -->
     <script src="http://maps.google.cn/maps/api/js?key=AIzaSyAlvkBdPenw0ag-lytRGHrvRn2S-_idF-w&libraries=places&callback=initMapService"
         async defer></script>
     <!-- Our script files -->
-    <script src={% static "navbar/scripts/nav-bar.js" %}></script>
+    <script src={% static "scripts/nav-bar.js" %}></script>
 
     </footer>
 </html>
