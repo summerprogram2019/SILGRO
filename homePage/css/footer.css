@@ -1,0 +1,63 @@
+footer {
+  clear: both;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    bottom: -200px;
+}
+
+.row {
+  margin: 20px;
+  margin-left: 100px;
+  color: black;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.lists {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#compLogo {
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.socials {
+  height: 44px;
+  padding: 3px;
+}
+
+#youtube {
+  height: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+#lastBox {
+  margin: 0;
+  padding: 4px;
+  background-color: black;
+}
+
+#lastLine {
+  color: white;
+  margin-bottom: 0;
+  margin-left: 45px;
+  padding: 5px;
+  font-size: 12px;
+}

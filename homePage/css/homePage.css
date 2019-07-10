@@ -1,0 +1,116 @@
+#homepage {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 700px;
+}
+
+#slogan {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding-top: 200px;
+}
+
+#part1 {
+	margin: 100px;
+}
+
+#wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.split {
+	width: 600px;
+	height: 65px;
+}
+
+#earth {
+	width: 70px;
+	height: 70px;
+}
+
+#plant {
+	width: 90px;
+	height: 90px;
+}
+
+#categ {
+	text-align: center;
+	margin-top: 100px;
+	font-size: 36;
+}
+
+#below {
+	margin: 70px 0px 0px 0px;
+	display: flex;
+	justify-content: center;
+}
+
+#below2 {
+	margin: 36px 0px 80px 0px;
+	display: flex;
+	justify-content: center;
+}
+
+.cats {
+	height: 220px;
+	margin: 0px 40px 0px 40px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cats2 {
+	height: 200px;
+	margin: 0px 40px 0px 40px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+figcaption {
+	text-align: center;
+	margin: 10px;
+	font-size: 16;
+}
+
+#trending {
+	margin: 20px 0px 50px 0px;
+	display: flex;
+	justify-content: center;
+}
+
+.trendingPics {
+	width: 100%;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.scrolling-wrapper::-webkit-scrollbar { 
+    display: none;
+}
+
+.polaroid {
+  width: 20%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 13px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px;
+  display: inline-block;
+}
+
+.container {
+  text-align: center;
+  padding: 10px;
+}
+
+.lineH {
+	line-height: 20px;
+}
+
+#heading {
+	margin-left: 70px;
+	margin-top: 70px;
+}
