@@ -77,3 +77,14 @@ def navbar(request):
         location = request.POST.get('location')
         result = Listing.objects.filter(title=category)
         return HttpResponse('Submit Successfully!')
+def homePage(request):
+    if request.method == 'GET':
+        return render(request, 'homePage.html', context=locals(), status=500)
+    else:
+        category = request.POST.get('category')
+        search = request.POST.get('search')
+        startDate = request.POST.get('startDate')
+        endDate = request.POST.get('endDate')
+        location = request.POST.get('location')
+        result = Listing.objects.filter(title=category)
+        return HttpResponse('Submit Successfully!')
