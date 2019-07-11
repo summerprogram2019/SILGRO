@@ -80,3 +80,19 @@ def homePage(request):
         location = request.POST.get('location')
         result = Listing.objects.filter(title=category)
         return HttpResponse('Submit Successfully!')
+
+def createAccount(request):
+    if request.method == 'GET':
+        return render(request, 'create-account.html', context=locals(), status=500)
+    else:
+        firstName = request.POST.get('firstName')
+        secondName = request.POST.get('secondName')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        account = UserAccount()
+        account.first_name = firstName
+        account.last_name = secondName
+        account.email = email
+        account.password = password
+        account.save()
+        return HttpResponse("Submit Successfully!")
