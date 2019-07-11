@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- JQUERY UI -->
+        <link rel="stylesheet" href={% static "Account Creation/css/jquery-ui.css" %}>
+        <link rel="stylesheet" href={% static "Account Creation/css/jquery-ui-theme.css" %}>
+        <!-- Our style sheets -->
+        <link rel="stylesheet" href={% static "Account Creation/css/nav-bar.css" %}>
+        <link rel="stylesheet" href={% static "Account Creation/css/create-account.css" %}>
+        <!-- INSERT CODE FOR PAGE NAME HERE -->
+        <title>
+        Create Account
+        </title>
+    </head>
+    <header>
+        <nav class="navbar" id="top-bar">
+            <div id="top-logo"><b><a href="#">SILGROSHARE</a></b></div>
+            <ul>
+                <li><a href="#">Create account</a></li>
+                <li>|</li>
+                <li><a href="#">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <div id="create-account">
+            <h1>Sign Up</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="First name" id="first-name" class="signup-input" name="firstName">
+                <input type="text" placeholder="Last name" id="last-name" class="signup-input" name="secondName">
+                <input type="text" placeholder="Email" id="email" class="signup-input" name="email">
+                <input type="password" placeholder="Password" id="pass" class="signup-input" name="password">
+                <p>By clicking register below, you are agree that you are over 18 years of age and have read and accepted our terms and conditions.</p>
+                <button type="submit" id="register">Register</button>
+                <p id="redirect-login">Already have an account? <a href="#">Log in here!</a></p>
+            </form>
+        </div>
+        <img id="img-filler" alt="Economy Sharing Image" src={% static "Account Creation/images/econ-sharing.png" %} >
+    </body>
+    <footer>
+        
+    <!-- JQUERY and JQUERY UI -->
+    <script src={% static "Account Creation/scripts/jquery.js" %}></script>
+    <script src={% static "Account Creation/scripts/jquery-ui.js" %}></script>
+    <!-- GOOGLE MAPS API -->
+    <script src="http://maps.google.cn/maps/api/js?key=AIzaSyAlvkBdPenw0ag-lytRGHrvRn2S-_idF-w&libraries=places&callback=initMapService"
+        async defer></script>
+    <!-- Our script files -->
+    <script src={% static "Account Creation/scripts/nav-bar.js" %}></script>
+
+    </footer>
+</html>
