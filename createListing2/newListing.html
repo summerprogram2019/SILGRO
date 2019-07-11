@@ -1,0 +1,193 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="SILGRO Share" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href={% static "createListing/style.css" %}>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <title>Create Listing</title>
+
+  </head>
+
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  		<a class="navbar-brand" href="aboutUs.html">SILGRO share</a>
+    	<img src={% static "createListing/images/profile.png" %} alt="profile pic" id="profile">
+	  	<a href="#" id="myAccount">My Account</a>
+	</nav>
+    <h1 id="heading">Create a new Listing</h1><br>
+     <form action="" method="post">
+         {% csrf_token %}
+    <nav id="newList">
+        <form id="wrap">
+            <img src={% static "createListing/images/name.png" %} alt="name pic" style="width: 160px; float: right; margin: 30px 180px 0px 0px;">
+            <br><h4>Listing Name</h4>
+            <p style="width: 50%;">The name of the item you don't need but someone else does. Give your listing an eye catching, yet informative, name to make your ad stick out of the crowd.</p>
+            <input type="text" name="title" maxlength="25" placeholder="   Title" size="67" style="border: none; border-bottom: 0.5px solid grey;"><br>
+
+            <br><br>
+
+            <img src={% static "createListing/images/category.png" %} alt="name pic" style="width: 190px; float: right; margin: 80px 160px 0px 0px;">
+            <br><h4>Category</h4>
+            <p style="width: 50%;">It's a bird, it's a plane. No! It's superman. Select one or two categories which best fit your product. This helps people effectively find what they're really after.</p>
+            <!--<form>
+                    <input type="checkbox" name="check[]" value="Apparel" style="margin-right: 10px;">Apparel<br>
+                    <input type="checkbox" name="check[]" value="Books" style="margin-right: 10px;">Books<br>
+                    <input type="checkbox" name="check[]" value="Electronics" style="margin-right: 10px;">Electronics<br>
+                    <input type="checkbox" name="check[]" value="Home" style="margin-right: 10px;">Home & Garden<br>
+                    <input type="checkbox" name="check[]" value="Sports" style="margin-right: 10px;">Sports & Fitness<br>
+                    <input type="checkbox" name="check[]" value="Transport" style="margin-right: 10px;">Transport<br>
+            </form><br><br>-->
+            <div style="margin-left: -100px;">
+                <label class="container">Apparel
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Books
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Electronics
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Home & Garden
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Sports & Fitness
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Transport
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+            </div><br>
+
+
+            <br><img src={% static "createListing/images/bubble.png" %} alt="name pic" style="width: 170px; float: right; margin: 90px 160px 0px 0px;">
+            <br><h4>Description</h4>
+            <p style="width: 50%">Advertise, market, barter, boost, hustleeeee ! Write a creative description to sweet talk your potential borrowers. Be as detailed as possible to ensure your borrower and product are truly a good fit.</p>
+            <textarea  name="description"  maxlength="1000" placeholder="Enter a description of your item" rows="10" cols="100" id="description"></textarea><br>
+
+            <br><br><br>
+
+            <img src={% static "createListing/images/money.png" %} alt="money pic" style="width: 170px; float: right; margin: -50px 160px 0px 0px;">
+            <br><h4>Rate</h4>
+            <p style="width: 50%">How big of a stinge' are you? This is the daily amount that the borrower is charged for your product. Have a browse through current similar listings for a rough idea.</p>
+            <h5>$ <input type="text" name="rate" maxlength="6" width="10" style="border: none; border-bottom: 0.5px solid grey;"></h5><br>
+
+            <br><br><br>
+
+            <br><img src={% static "createListing/images/available.png" %} alt="calendar pic" style="width: 170px; float: right; margin: -20px 160px 0px 0px;">
+            <h4>Availability</h4>
+            <p style="width: 50%">Input a start and end date for availability of your item. Can be a single day to a few months at a time. The more time the merrier.</p>
+            <!--Start: <input type="text" id="datepicker" name="availability">
+            End: <input type="text" id="datepicker2" name="availability"><br>-->
+
+            <form>
+              <div class="sd-container">
+                <input class="sd" type="date" name="selected_date" />
+                <span class="open-button">
+                  <button type="button">📅</button>
+                </span>
+              </div>
+            </form>
+
+            <form>
+              <div class="sd-container">
+                <input class="sd" type="date" name="selected_date" />
+                <span class="open-button">
+                  <button type="button">📅</button>
+                </span>
+              </div>
+            </form><br><br>
+
+            <br><br><br>
+
+            <br><h4>Add Photos</h4>
+            <p style="width: 50%">More photos, more chance you'll get called beautiful or handsome. Upload up to 10 photos to show off your item's condition and reduce those hustles.</p>
+            <!--<input type="file" name="img" onchange="readURL(this);" id="back"><br>
+            <img src="http://placehold.it/180" id="blah" alt="your image"> <br>
+
+            <input type="file" name="img2" onchange="readURL2(this);" id="back2"><br>
+            <img src="http://placehold.it/180" id="blah2" alt="your image"> <br>
+-->
+
+
+
+
+            <article id="photo">
+                <input style="background-color: white;" id="files" type="file" multiple/>
+                <output id="result"></output>
+            </article>
+
+
+
+
+
+
+            <br><button class="button" style="vertical-align:middle"><span>Submit </span></button>
+        </form>
+    </nav>
+     </form>
+    <footer>
+        <hr><br>
+    	<div class="row">
+    		<div class="column" id="first">
+
+    			<h2>Categories</h2>
+    			<ul class="lists">
+    				<li><a href="#">Apparel</a></li>
+    				<li><a href="#">Books</a></li>
+    				<li><a href="#">Electronics</a></li>
+       				<li><a href="#">Home & Garden</a></li>
+       				<li><a href="#">Sports & Fitness</a></li>
+    				<li><a href="#">Transport</a></li>
+    			</ul>
+    		</div>
+    		<div class="column">
+    			<h2>For You</h2>
+    			<ul class="lists">
+    				<li><a href="#">New Account</a></li>
+    				<li><a href="#">New Listing</a></li>
+    				<li><a href="#">Current Listings</a></li>
+    				<li><a href="#">My Account</a></li>
+    				<li><a href="#">My History</a></li>
+    			</ul>
+    		</div>
+    		<div class="column">
+    			<img src={% static "footer-images/logo.png"%} alt="company logo" id="compLogo">
+    			<br>
+    			<img src={% static "footer-images/facebook.png" %} alt="facebook logo" class="socials">
+    			<img src={% static "footer-images/instagram.png" %} alt="instagram logo" class="socials">
+    			<img src={% static "footer-images/twitter.png" %} alt="twitter logo" class="socials">
+                <img src={% static "footer-images/youtube.png" %} alt="youtube logo" id="youtube">
+    		</div>
+    		<div class="column">
+    			<h2>About</h2>
+    			<ul class="lists">
+    				<li><a href="#">About Us</a></li>
+    				<li><a href="#">Contact Us</a></li>
+    				<li><a href="#">FAQs</a></li>
+    				<li><a href="#">Policy</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    	<br>
+    	<div id="lastBox">
+    		<p id="lastLine">Copyright © 2019 SILGRO Technologies. All Rights Reserved.</p>
+    	</div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src={% static "createListing/myScript.js" %}></script>
+  </body>
+</html>
