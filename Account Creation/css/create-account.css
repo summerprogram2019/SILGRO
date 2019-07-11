@@ -1,0 +1,135 @@
+#create-account{
+    width: 500px;
+    height: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 160px;
+    left: 10%;
+    padding: 10px;
+    
+}
+#create-account h1{
+    font-family: roboto;
+    font-weight: 300;
+    font-size: 45px;
+    margin: 10px 0px 10px 0px;
+}
+.signup-input{
+    margin-top: 40px;
+    width: 190px;
+    margin-right: 20px;
+    border: none;
+    border-bottom: solid black 1px;
+}
+#first-name, #email, #pass{
+    flex-wrap: wrap;
+}
+#email{
+    width: 400px;
+}
+#pass{
+    width: 320px;
+}
+#create-account p{
+    font-family: roboto;
+    width: 400px;
+    font-weight: 300;
+    font-size: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+#register{
+    width: 80px;
+    border-radius: 20px;
+    border: none;
+    background-color: #6F83FF;
+    color: white;
+    font: roboto;
+    font-weight: 100;
+    font-size: 15px;
+    padding: 5px;
+    width: 150px;
+    height: 30px;
+    margin-left: 260px;
+    margin-bottom: -10px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+#register:hover{
+    cursor: pointer;
+}
+#redirect-login{
+    float: right;
+    flex-wrap: wrap;
+    margin-right: -110px;
+}
+#redirect-login a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+#img-filler{
+    opacity: 0.8;
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 500px;
+}
+
+
+/* Add display picture styling */
+
+#welcome{
+    position: absolute;
+    left: 17%;
+    top: 40%;
+    width: 21.5%;
+    font-family: Roboto;
+    font-size: 2.2em;
+}
+#l2{
+    font-size: 0.8em;
+}
+#descriptor{
+    top: 55%;
+    width: 110%;
+    font-weight: 300;
+    margin-top: 50px;
+    font-size: 0.7em;
+}
+#descriptor a{
+    font-size: 0.5em;
+    float: right;
+    margin-top: 50px;
+    text-decoration: none;
+    color: black;
+}
+#descriptor a:hover{
+    border-bottom: solid 1px black;
+}
+#camera-circle{
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    background-color: #f1f1f1;
+    position: absolute;
+    left: 55%;
+    top: 40%;
+    display: flex;
+}
+#camera-circle img{
+    width: 60%;
+    margin: auto;
+}
+#camera-circle:hover{
+    cursor: pointer;
+}
+#camera-text{
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    left: 55%;
+    top: 40%;
+    margin-top: 180px;
+}
