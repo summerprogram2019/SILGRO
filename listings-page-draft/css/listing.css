@@ -1,0 +1,86 @@
+body{
+    overflow-x
+    : hidden;
+}
+#content{
+    position: absolute;
+    margin-top: 250px;
+    width: 100%;
+    display: flex;
+}
+.side-ad{
+    height: fill;
+    width: 40%;
+}
+#listings{
+    width: 100%;
+    background-color: #f6f6f6;
+}
+.listing{
+    margin: 10px;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    clear: both;
+    overflow: auto;
+    margin: 0;
+    font-family: Roboto;
+    display: flex;
+    max-height: 150px;
+}
+h1{
+    position: absolute;
+    margin-top: 175px;
+    margin-left: 50px;
+    font-size: 1.2em;
+    color: black;
+    width: 100%;
+    font-family: Roboto;
+    font-weight: 500;
+}
+.list-img{
+    width: 150px;
+    height: 120px;
+    min-width: 150px;
+    min-height: 120px;
+    background-color: grey;
+    position: relative;
+    margin: 10px;
+    float: left;
+}
+.listing h2{
+    float: left;
+    font-weight: 300;
+    margin-top: 5px;
+    overflow: hidden;
+    color: #6F83FF;
+    margin-bottom: 0;
+    max-height: 25px;
+}
+.listing:hover{
+    cursor: pointer;
+}
+.listing:hover h2{
+    text-decoration: underline;
+}
+.listing p{
+    font-size: 0.7em;
+    margin-top: 5px;
+    color: black;
+    border: #6F83FF;
+    float: left;
+    clear: left;
+}
+.listing h3{
+    margin-top: 5px;
+    font-size: 0.9em;
+    float: left;
+    clear: left;
+    font-weight: 300;
+    max-height: 20px;
+    overflow: hidden;
+}
+#list-desc{
+    float: left;
+    max-height: 125px;
+    overflow: hidden;
+}
