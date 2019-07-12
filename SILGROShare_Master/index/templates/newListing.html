@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <meta name="SILGRO Share" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,13 +11,13 @@
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-    <title>New Listing</title>
+    <title>Create Listing</title>
 
   </head>
 
   <body>
   	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  		<a class="navbar-brand" href="aboutUs.html">SILGRO share</a>
+  		<a class="navbar-brand" href="aboutUs.html"><img src={% static "footer-images/logo2.png"%} alt="company logo" id="compLogo2"></a>
     	<img src={% static "createListing/images/profile.png" %} alt="profile pic" id="profile">
 	  	<a href="#" id="myAccount">My Account</a>
 	</nav>
@@ -26,103 +26,122 @@
          {% csrf_token %}
     <nav id="newList">
         <form id="wrap">
-                <br>Listing Name<br>
-                <input type="text" name="title" maxlength="25" placeholder="Title" size="67"><br>
-                <br>
-                <br>Category<br>
-                <form>
-                    <input type="checkbox" name="check[]" value="Apparel"> <img src="{% static "createListing/images/category/apparel.png" %}" class="icon" /> Apparel<br>
-                    <input type="checkbox" name="check[]" value="Books"> <img src="{% static "createListing/images/category/books.png" %}" class="icon"> Books<br>
-                    <input type="checkbox" name="check[]" value="Electronics"> <img src={% static "createListing/images/category/electronics.png" %} class="icon"> Electronics<br>
-                    <input type="checkbox" name="check[]" value="Home"> <img src={% static "createListing/images/category/home.png" %} class="icon"> Home & Garden<br>
-                    <input type="checkbox" name="check[]" value="Sports"> <img src={% static "createListing/images/category/sports.png" %} class="icon"> Sports & Fitness<br>
-                    <input type="checkbox" name="check[]" value="Transport"> <img src={% static "createListing/images/category/transport.png" %} class="icon"> Transport<br>
-                </form><br>
+            <img src={% static "createListing/images/name.png" %} alt="name pic" style="width: 160px; float: right; margin: 30px 180px 0px 0px;">
+            <br><h4>Listing Name</h4>
+            <p style="width: 50%;">The name of the item you don't need but someone else does. Give your listing an eye catching, yet informative, name to make your ad stick out of the crowd.</p>
+            <input type="text" name="title" maxlength="25" placeholder="   Title" size="67" style="border: none; border-bottom: 0.5px solid grey;"><br>
 
-                <br>Description<br>
-                <textarea  name="description"  maxlength="1000" placeholder="Enter a description of your item" rows="10" cols="80" id="description"></textarea><br>
-                <br>Rate: <input type="text" name="rate" maxlength="6" width="10"> / day<br>
-                <div id="pls">
-                <br>Availability<br>
-                Date: <input type="text" id="datepicker" name="availability">
-                <!-- <br><table border="3" cellspacing="3" cellpadding="3" id="calendar">
-                    <tr>
-                        <td colspan="7" align="center">
-                            <b>July 2019</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center">Mon</td>
-                        <td align="center">Tue</td>
-                        <td align="center">Wed</td>
-                        <td align="center">Thu</td>
-                        <td align="center">Fri</td>
-                        <td align="center">Sat</td>
-                        <td align="center">Sun</td>
-                    </tr>
-                    <tr>
-                        <td align="center">1</td>
-                        <td align="center">2</td>
-                        <td align="center">3</td>
-                        <td align="center">4</td>
-                        <td align="center">5</td>
-                        <td align="center">6</td>
-                        <td align="center">7</td>
-                    </tr>
-                    <tr>
-                        <td align="center">8</td>
-                        <td align="center">9</td>
-                        <td align="center">10</td>
-                        <td align="center">11</td>
-                        <td align="center">12</td>
-                        <td align="center">13</td>
-                        <td align="center">14</td>
-                    </tr>
-                    <tr>
-                        <td align="center">15</td>
-                        <td align="center">16</td>
-                        <td align="center">17</td>
-                        <td align="center">18</td>
-                        <td align="center">19</td>
-                        <td align="center">20</td>
-                        <td align="center">21</td>
-                    </tr>
-                    <tr>
-                        <td align="center">22</td>
-                        <td align="center">23</td>
-                        <td align="center">24</td>
-                        <td align="center">25</td>
-                        <td align="center">26</td>
-                        <td align="center">27</td>
-                        <td align="center">28</td>
-                    </tr>
-                    <tr>
-                        <td align="center">29</td>
-                        <td align="center">30</td>
-                        <td align="center">31</td>
-                        <td align="center"></td>
-                        <td align="center"></td>
-                        <td align="center"></td>
-                        <td align="center"></td>
-                    </tr>
-                </table> -->
-                </div>
-                <div id="rest">
-                    <br>Add Photos:<br>
-                    <input type="file" name="img" multiple="10" onchange="readURL(this);" id="back"><br>
-                    Choose up to 10 .jpeg .img or .png files<br>
-                    <img src="http://placehold.it/180" id="blah" alt="your image"> <br>
+            <br><br>
 
-                    <br>
-                    <input type="submit" name="submit">
+            <img src={% static "createListing/images/category.png" %} alt="name pic" style="width: 190px; float: right; margin: 80px 160px 0px 0px;">
+            <br><h4>Category</h4>
+            <p style="width: 50%;">It's a bird, it's a plane. No! It's superman. Select one or two categories which best fit your product. This helps people effectively find what they're really after.</p>
+            <!--<form>
+                    <input type="checkbox" name="check[]" value="Apparel" style="margin-right: 10px;">Apparel<br>
+                    <input type="checkbox" name="check[]" value="Books" style="margin-right: 10px;">Books<br>
+                    <input type="checkbox" name="check[]" value="Electronics" style="margin-right: 10px;">Electronics<br>
+                    <input type="checkbox" name="check[]" value="Home" style="margin-right: 10px;">Home & Garden<br>
+                    <input type="checkbox" name="check[]" value="Sports" style="margin-right: 10px;">Sports & Fitness<br>
+                    <input type="checkbox" name="check[]" value="Transport" style="margin-right: 10px;">Transport<br>
+            </form><br><br>-->
+            <div style="margin-left: -100px;">
+                <label class="container">Apparel
+                  <input type="checkbox" >
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Books
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Electronics
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Home & Garden
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Sports & Fitness
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Transport
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+            </div><br>
 
-                </div>
+
+            <br><img src={% static "createListing/images/bubble.png" %} alt="name pic" style="width: 170px; float: right; margin: 90px 160px 0px 0px;">
+            <br><h4>Description</h4>
+            <p style="width: 50%">Advertise, market, barter, boost, hustleeeee ! Write a creative description to sweet talk your potential borrowers. Be as detailed as possible to ensure your borrower and product are truly a good fit.</p>
+            <textarea  name="description"  maxlength="1000" placeholder="Enter a description of your item" rows="10" cols="100" id="description"></textarea><br>
+
+            <br><br><br>
+
+            <img src={% static "createListing/images/money.png" %} alt="money pic" style="width: 170px; float: right; margin: -50px 160px 0px 0px;">
+            <br><h4>Rate</h4>
+            <p style="width: 50%">How big of a stinge' are you? This is the daily amount that the borrower is charged for your product. Have a browse through current similar listings for a rough idea.</p>
+            <h5>$ <input type="text" name="rate" maxlength="6" width="10" style="border: none; border-bottom: 0.5px solid grey;"></h5><br>
+
+            <br><br><br>
+
+            <br><img src={% static "createListing/images/available.png" %} alt="calendar pic" style="width: 170px; float: right; margin: -20px 160px 0px 0px;">
+            <h4>Availability</h4>
+            <p style="width: 50%">Input a start and end date for availability of your item. Can be a single day to a few months at a time. The more time the merrier.</p>
+            <!--Start: <input type="text" id="datepicker" name="availability">
+            End: <input type="text" id="datepicker2" name="availability"><br>-->
+
+            <form>
+              <div class="sd-container">
+                <input class="sd" type="date" name="selected_date" />
+                <span class="open-button">
+                  <button type="button">📅</button>
+                </span>
+              </div>
+            </form>
+
+            <form>
+              <div class="sd-container">
+                <input class="sd" type="date" name="selected_date" />
+                <span class="open-button">
+                  <button type="button">📅</button>
+                </span>
+              </div>
+            </form><br><br>
+
+            <br><br><br>
+
+            <br><h4>Add Photos</h4>
+            <p style="width: 50%">More photos, more chance you'll get called beautiful or handsome. Upload up to 10 photos to show off your item's condition and reduce those hustles.</p>
+            <!--<input type="file" name="img" onchange="readURL(this);" id="back"><br>
+            <img src="http://placehold.it/180" id="blah" alt="your image"> <br>
+
+            <input type="file" name="img2" onchange="readURL2(this);" id="back2"><br>
+            <img src="http://placehold.it/180" id="blah2" alt="your image"> <br>
+-->
+
+
+
+
+            <article id="photo">
+                <input style="background-color: white;" id="files" type="file" multiple/>
+                <output id="result"></output>
+            </article>
+
+
+
+
+
+
+            <br><button class="button" style="vertical-align:middle"><span>Submit </span></button>
         </form>
     </nav>
      </form>
     <footer>
     	<div class="row">
     		<div class="column" id="first">
+
     			<h2>Categories</h2>
     			<ul class="lists">
     				<li><a href="#">Apparel</a></li>
@@ -144,12 +163,12 @@
     			</ul>
     		</div>
     		<div class="column">
-    			<img src={% static "footer-images/logo.png" %} alt="company logo" id="compLogo">
-    			<br>
+    			<img src={% static "footer-images/logo2.png"%} alt="company logo" id="compLogo">
+    			<!--<br>
     			<img src={% static "footer-images/facebook.png" %} alt="facebook logo" class="socials">
     			<img src={% static "footer-images/instagram.png" %} alt="instagram logo" class="socials">
     			<img src={% static "footer-images/twitter.png" %} alt="twitter logo" class="socials">
-    			<img src={% static "footer-images/youtube.png" %} alt="youtube logo" id="youtube">
+                <img src={% static "footer-images/youtube.png" %} alt="youtube logo" id="youtube">-->
     		</div>
     		<div class="column">
     			<h2>About</h2>
@@ -167,13 +186,7 @@
     	</div>
     </footer>
 
-    <script src={% static "https://code.jquery.com/jquery-1.12.4.js" %}></script>
-    <script src={% static "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %}></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src={% static "createListing/myScript.js" %}></script>
-    <script>
-      $( function() {
-        $( "#datepicker" ).datepicker();
-      } );
-    </script>
   </body>
 </html>
