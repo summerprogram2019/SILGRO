@@ -21,5 +21,12 @@ urlpatterns = [
 
     path('searchResult.html',views.searchResult),
 
+    # bowtie
+    path('bowtie.html',views.bowtie),
+    # suit
+    path('suit.html',views.suit),
+    # aboutUs
+    path('aboutUs.html',views.aboutUs),
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
