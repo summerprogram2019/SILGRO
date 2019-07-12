@@ -35,6 +35,25 @@ def download(request):
     writer.writerow(['First row','A','B','C'])
     return response
 
+def aboutUs(request):
+    if request.method == 'GET':
+        return render(request, 'aboutUs.html', context=locals(), status=500)
+
+def bowtie(request):
+    bowtie1 = Img.objects.get(id=46)
+    bowtie2 = Img.objects.get(id=47)
+    bowtie3 = Img.objects.get(id=48)
+    suit1 = Img.objects.get(id=49)
+    sunnies1 = Img.objects.get(id=52)
+    heels1 = Img.objects.get(id=54)
+    dress1 = Img.objects.get(id=55)
+    bowtie_info = Listing.objects.get(id=56)
+    suit_info = Listing.objects.get(id=57)
+    sunnies_info = Listing.objects.get(id=58)
+    heels_info = Listing.objects.get(id=60)
+    dress_info = Listing.objects.get(id=61)
+    return render(request, 'bowtie.html', context=locals(), status=500)
+
 def newListing(request):
     if request.method == 'GET':
         return render(request, 'newListing.html', context=locals(), status=500)
@@ -77,6 +96,18 @@ def navbar(request):
         return render(request, 'listings.html', context=locals(), status=500)
 def homePage(request):
     if request.method == 'GET':
+        bowtie1 = Img.objects.get(id=46)
+        bowtie_info = Listing.objects.get(id=56)
+        suit1 = Img.objects.get(id=49)
+        suit_info = Listing.objects.get(id=57)
+        sunnies1 = Img.objects.get(id=52)
+        sunnies_info = Listing.objects.get(id=58)
+        heels1 = Img.objects.get(id=54)
+        heels_info = Listing.objects.get(id=60)
+        dress1 = Img.objects.get(id=55)
+        dress_info = Listing.objects.get(id=61)
+        denim1 = Img.objects.get(id=56)
+        denim_info = Listing.objects.get(id=62)
         return render(request, 'homePage.html', context=locals(), status=500)
     else:
         category = request.POST.get('category')
@@ -84,10 +115,8 @@ def homePage(request):
         startDate = request.POST.get('startDate')
         endDate = request.POST.get('endDate')
         location = request.POST.get('location')
-        inf = Listing.objects.filter(images__contains=search)
-        p = len(inf)
-        resultNumber = str(p) + " " + "listings found for " + search
-        return render(request, 'listings.html', context=locals(), status=500)
+        result = Listing.objects.filter(title=category)
+        return HttpResponse('Submit Successfully!')
 
 def createAccount(request):
     if request.method == 'GET':
@@ -120,3 +149,20 @@ def searchResult(request):
         p = len(inf)
         resultNumber = str(p)+" "+"listings found for "+search
         return render(request, 'listings.html', context=locals(), status=500)
+
+def suit(request):
+    suit1 = Img.objects.get(id=49)
+    suit2 = Img.objects.get(id=50)
+    suit3 = Img.objects.get(id=51)
+    suit_info = Listing.objects.get(id=57)
+
+    bowtie1 = Img.objects.get(id=46)
+    sunnies1 = Img.objects.get(id=52)
+    denim1 = Img.objects.get(id=56)
+    dress1 = Img.objects.get(id=55)
+
+    bowtie_info = Listing.objects.get(id=56)
+    sunnies_info = Listing.objects.get(id=58)
+    denim_info = Listing.objects.get(id=62)
+    dress_info = Listing.objects.get(id=61)
+    return render(request, 'suit.html', context=locals(), status=500)
