@@ -1,0 +1,525 @@
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- JQUERY UI -->
+        <link rel="stylesheet" href={% static "homepage/css/jquery-ui.css" %}>
+        <link rel="stylesheet" href={% static "homepage/css/jquery-ui-theme.css" %}>
+        <!-- Our style sheets -->
+        <link rel="stylesheet" href={% static "homepage/css/nav-bar.css" %}>
+        <link rel="stylesheet" href={% static "homepage/css/homePage.css" %}>
+        <!-- INSERT CODE FOR PAGE NAME HERE -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href={% static "homepage/css/footer.css" %}>
+        <title>Home Page</title>
+    </head>
+    <body>
+    <header>
+        <nav class="navbar" id="top-bar">
+            <div id="top-logo"><b><a href="http://127.0.0.1:8000">SILGROSHARE</a></b></div>
+            <ul>
+                <li><a href="#">Create account</a></li>
+                <li>|</li>
+                <li><a href="#">Log in</a></li>
+            </ul>
+        </nav>
+        <nav class="navbar" id="search-section">
+            <form action="" method="post">
+            {% csrf_token %}
+                <div id="search-inputs">
+                    <div id="top-search">
+                            <select id="category" name="category">
+                                <option value="all">Category</option>
+                                <option value="Apparel">Apparel</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Home">Home</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Books">Books</option>
+                            </select>
+                        <input id="search-bar" type="text" name="search" placeholder="Search...">
+                        <button type="submit" id="search" value=""><img src={% static "homepage/images/magnifying-glass.png" %}></button>
+                    </div>
+                    <div id="bottom-search">
+                        <input id="start-time" class="nav-date" type="text" placeholder="Start Date"/>
+                        <input id="end-time" class="nav-date" type="text" placeholder="End Date"/>
+                        <input id="nav-location" type="text" placeholder="Location">
+                        <a id="a-search" href="#">advanced search</a>
+                    </div>
+                </div>
+            </form>
+        </nav>
+    </header>
+    <main>
+<!--         <div id="homepage"><br>
+            <p id="slogan">a sharing community is a good community</p>
+        </div>
+
+        <div id="part1">
+            <p>Here are SILGRO Technologies we wanted to make a platform by the people, for the people, to enhance the world of the sharing economy. Here are SILGRO Technologies we wanted to make a platform by the people, for the people, to enhance the world of the sharing economy. Here are SILGRO Technologies we wanted to make a platform by the people, for the people, to enhance the world of the sharing economy. Here are SILGRO Technologies we wanted to make a platform by the people, for the people, to enhance the world of the sharing economy.</p>
+        </div>
+        
+        <div id="wrapper">
+            <img src="images/line.png" alt="splitter" class="split">
+            <img src="images/earth.png" alt="earth" class="split" id="earth">
+            <img src="images/line.png" alt="splitter" class="split">
+        </div> -->
+
+        <!-- <h2 id="categ">categories</h2>
+
+        <div id="below">
+
+            <figure>
+                <img src="images/apparelPic.jpg" class="cats">
+                <figcaption>apparel</figcaption>
+            </figure>
+            <figure>
+                <img src="images/booksPic.jpg" class="cats">
+                <figcaption>books</figcaption>
+            </figure>
+            <figure>
+                <img src="images/electronicsPic.jpg" class="cats">
+                <figcaption>electronics</figcaption>
+            </figure>
+        </div>
+        <div id="below2">
+            <figure>
+                <img src="images/homePic.jpg" class="cats2">
+                <figcaption>home & garden</figcaption>
+            </figure>
+            <figure>
+                <img src="images/sportsPic2.jpg" class="cats2">
+                <figcaption>sports & fitness</figcaption>
+            </figure>
+            <figure>
+                <img src="images/transportPic2.jpg" class="cats2">
+                <figcaption>transport</figcaption>
+            </figure>
+        </div>
+
+        <div id="wrapper">
+            <img src="images/line.png" alt="splitter" class="split">
+            <img src="images/plant.png" alt="plant" class="split" id="plant">
+            <img src="images/line.png" alt="splitter" class="split">
+        </div> -->
+
+        <div>
+            <h2 id="categ">popular in your area</h2>
+        </div>
+
+        <h2 id="heading">apparel</h2>
+        <div id="trending">
+        	<div class="scrolling-wrapper">
+	            <div class="polaroid">
+                    <a href="bowtie.html" target="_blank">
+	              <img class="trendingPics" src={{ bowtie1.img_url.url }}></a>
+	              <div class="container">
+	                <h5 class="lineH">{{ bowtie_info.title }}</h5>
+	                <p class="lineH">Rate: ${{ bowtie_info.rate}}/day </p>
+	                <p class="lineH"><img style="width: 50px" src={% static "homepage/images/location.png" %} > 4312, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+                    <a href="navbar.html" target="_blank">
+                        <img class="trendingPics" src={{ suit1.img_url.url }} ></a>
+	              <div class="container">
+	                <h5 class="lineH">{{ suit_info.title }}</h5>
+	                <p class="lineH">Rate: ${{ suit_info.rate}}/day </p>
+	                <p class="lineH"><img style="width: 50px" src={% static "homepage/images/location.png" %}> 4075, Michelton</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+                    <a href="navbar.html" target="_blank">
+                        <img class="trendingPics" src={{ sunnies1.img_url.url }} ></a>
+	              <div class="container">
+	                <h5 class="lineH">{{ sunnies_info.title }}</h5>
+	                <p class="lineH">Rate: ${{ sunnies_info.rate}}/day </p>
+	                <p class="lineH"><img style="width: 50px" src={% static "homepage/images/location.png" %}> 4598, Toowoomba</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={{ denim1.img_url.url }} >
+	              <div class="container">
+	                <h5 class="lineH">{{ denim_info.title }}</h5>
+	                <p class="lineH">Rate: ${{ denim_info.rate}}/day </p>
+	                <p class="lineH"><img style="width: 50px; " src={% static "homepage/images/location.png" %} > 4875, Brandon</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={{ dress1.img_url.url }} >
+	              <div class="container">
+	                <h5 class="lineH">{{ dress_info.title }}</h5>
+	                <p class="lineH">Rate: ${{ dress_info.rate }}/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} >4819, Upper Terrace</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={{ heels1.img_url.url }} >
+	              <div class="container">
+	                <h5 class="lineH">{{ heels_info.title }}</h5>
+	                <p class="lineH">Rate: ${{ heels_info.rate }}/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4811, Grovely</p>
+	              </div>
+	            </div>
+            </div>
+        </div>
+
+        <h2 id="heading">books</h2>
+        <div id="trending">
+        	<div class="scrolling-wrapper">
+	            <div class="polaroid">
+	              <img class="trendingPics"  src={%  static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img  class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px; "src={% static "homepage/images/location.png" %} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img  class="trendingPics" src={% static "homepage/images/ladder.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Steady enough ladder</h5>
+	                <p class="lineH">Rate: $20/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4069, Kenmore</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/book.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Finnegan's Wake</h5>
+	                <p class="lineH">Rate: $1/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4006, Fortitude Valley</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+            </div>
+        </div>
+
+        <h2 id="heading">electronics</h2>
+        <div id="trending">
+        	<div class="scrolling-wrapper">
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img  class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png"%} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img  class="trendingPics" src={% static "homepage/images/ladder.jpg" %}>
+	              <div class="container">
+	                <h5 class="lineH">Steady enough ladder</h5>
+	                <p class="lineH">Rate: $20/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4069, Kenmore</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/book.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Finnegan's Wake</h5>
+	                <p class="lineH">Rate: $1/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4006, Fortitude Valley</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img  class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+            </div>
+        </div>
+
+        <h2 id="heading">home & garden</h2>
+        <div id="trending">
+        	<div class="scrolling-wrapper">
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/ladder.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Steady enough ladder</h5>
+	                <p class="lineH">Rate: $20/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4069, Kenmore</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/book.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Finnegan's Wake</h5>
+	                <p class="lineH">Rate: $1/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4006, Fortitude Valley</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+            </div>
+        </div>
+
+        <h2 id="heading">sports & fitness</h2>
+        <div id="trending">
+        	<div class="scrolling-wrapper">
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/ladder.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Steady enough ladder</h5>
+	                <p class="lineH">Rate: $20/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4069, Kenmore</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/book.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Finnegan's Wake</h5>
+	                <p class="lineH">Rate: $1/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4006, Fortitude Valley</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+            </div>
+        </div>
+
+        <h2 id="heading">transport</h2>
+        <div id="trending">
+        	<div class="scrolling-wrapper">
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;"  src={% static "homepage/images/location.png" %}  > 4000, Brisbane</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/ladder.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Steady enough ladder</h5>
+	                <p class="lineH">Rate: $20/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4069, Kenmore</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/book.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Finnegan's Wake</h5>
+	                <p class="lineH">Rate: $1/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4006, Fortitude Valley</p>
+	              </div>
+	            </div>
+
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/camera.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Nikon Camera</h5>
+	                <p class="lineH">Rate: $15/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4101, West End</p>
+	              </div>
+	            </div>
+	            
+	            <div class="polaroid">
+	              <img class="trendingPics" src={% static "homepage/images/transportPic.jpg" %} >
+	              <div class="container">
+	                <h5 class="lineH">Hire a van!</h5>
+	                <p class="lineH">Rate: $40/day </p>
+	                <p class="lineH"><img style="width: 50px;" src={% static "homepage/images/location.png" %} > 4000, Brisbane</p>
+	              </div>
+	            </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="row">
+            <div class="column" id="first">
+                <h2>Categories</h2>
+                <ul class="lists">
+                    <li><a href="#">Apparel</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Home & Garden</a></li>
+                    <li><a href="#">Sports & Fitness</a></li>
+                    <li><a href="#">Transport</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>For You</h2>
+                <ul class="lists">
+                    <li><a href="#">New Account</a></li>
+                    <li><a href="newListing.html">New Listing</a></li>
+                    <li><a href="#">Current Listings</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">My History</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <img alt="company logo" id="compLogo" src={% static "/footer-images/logo.png" %}  >
+                <br>
+                <img alt="facebook logo" class="socials" src={% static "/footer-images/facebook.png" %}  >
+                <img alt="instagram logo" class="socials" src={% static "/footer-images/instagram.png"  %} >
+                <img alt="twitter logo" class="socials" src={% static "/footer-images/twitter.png" %} >
+                <img alt="youtube logo" id="youtube" src={% static "/footer-images/youtube.png" %} >
+            </div>
+            <div class="column">
+                <h2>About</h2>
+                <ul class="lists">
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="lastBox">
+            <p id="lastLine">Copyright © 2019 SILGRO Technologies. All Rights Reserved.</p>
+        </div>
+        
+        <!-- JQUERY and JQUERY UI -->
+        <script src={% static "homepage/scripts/jquery.js" %}></script>
+        <script src={% static "homepage/scripts/jquery-ui.js" %}></script>
+        <!-- GOOGLE MAPS API -->
+        <script src="http://maps.google.cn/maps/api/js?key=AIzaSyAlvkBdPenw0ag-lytRGHrvRn2S-_idF-w&libraries=places&callback=initMapService"
+            async defer></script>
+        <!-- Our script files -->
+        <script src={% static "homepage/scripts/nav-bar.js" %}></script>
+    </footer>
+    </body>
+</html>

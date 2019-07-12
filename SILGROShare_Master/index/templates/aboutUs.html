@@ -1,0 +1,83 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="SILGRO Share" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href={% static "aboutUs/style.css" %}>
+
+    <title>About Us</title>
+
+  </head>
+
+  <div>
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  		<a class="navbar-brand" href="aboutUs.html"><img src={% static "footer-images/logo2.png" %} alt="company logo" id="compLogo2"></a>
+    	<img src={% static "createListing/images/profile.png" %} alt="profile pic" id="profile">
+	  	<a href="#" id="myAccount">My Account</a>
+	</nav>
+
+    <h1 id="heading">About Us</h1><br>
+
+	<img src={% static "aboutUs/images/team2.png" %} alt="team pic" id="team">
+
+	<main>
+		<p>S1LGR0 Share is brought to you by the team of S1LGR0 Technologies. Founded in June of 2019 the group then started with six members and till today still just holds these six. Consisting of four Australians from the University of Queensland, and two members from Dalian Neusoft University of Technology.</p>
+		<p>S1LGR0 is an innovative new startup that provides platforms to support an economical sharing system. S1LGR0 SHARE is the newest product of S1LGR0 and is being rated Australia and China's #1 platform for a sharing economy. The founders and developers of the platform are university students who are also strong advocates for economical savings. The functionality of most recent S1LGR0 SHARE provides an all-in-one package where users are able to borrow or lend any item in their area.</p>
+		<p>The platform is both strong for the people's savings and also holds a positive environmental impact. It only has the potential to do well in this world - a platform of sharing for the people, by the people.</p>
+		</main>
+	  <div id="final">
+    <footer>
+    	<div class="row">
+    		<div class="column" id="first">
+
+    			<h2>Categories</h2>
+    			<ul class="lists">
+    				<li><a href="#">Apparel</a></li>
+    				<li><a href="#">Books</a></li>
+    				<li><a href="#">Electronics</a></li>
+       				<li><a href="#">Home & Garden</a></li>
+       				<li><a href="#">Sports & Fitness</a></li>
+    				<li><a href="#">Transport</a></li>
+    			</ul>
+    		</div>
+    		<div class="column">
+    			<h2>For You</h2>
+    			<ul class="lists">
+    				<li><a href="#">New Account</a></li>
+    				<li><a href="#">New Listing</a></li>
+    				<li><a href="#">Current Listings</a></li>
+    				<li><a href="#">My Account</a></li>
+    				<li><a href="#">My History</a></li>
+    			</ul>
+    		</div>
+    		<div class="column">
+    			<img src={% static "footer-images/logo2.png"%} alt="company logo" id="compLogo">
+    			<!--<br>
+    			<img src={% static "footer-images/facebook.png" %} alt="facebook logo" class="socials">
+    			<img src={% static "footer-images/instagram.png" %} alt="instagram logo" class="socials">
+    			<img src={% static "footer-images/twitter.png" %} alt="twitter logo" class="socials">
+                <img src={% static "footer-images/youtube.png" %} alt="youtube logo" id="youtube">-->
+    		</div>
+    		<div class="column">
+    			<h2>About</h2>
+    			<ul class="lists">
+    				<li><a href="#">About Us</a></li>
+    				<li><a href="#">Contact Us</a></li>
+    				<li><a href="#">FAQs</a></li>
+    				<li><a href="#">Policy</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    	<br>
+    	<div id="lastBox">
+    		<p id="lastLine">Copyright © 2019 SILGRO Technologies. All Rights Reserved.</p>
+    	</div>
+    </footer>
+  	</div>
+    <script type="text/javascript" src={% static "aboutUs/myScript.js" %}></script>
+  </body>
+</html>
