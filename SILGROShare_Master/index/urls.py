@@ -16,6 +16,10 @@ urlpatterns = [
     path('newListing.html',views.newListing),
     #navbar
     path('navbar.html',views.navbar),
-    path('create-account.html',views.createAccount)
+
+    path('create-account.html',views.createAccount),
+
+    path('searchResult.html',views.searchResult),
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
