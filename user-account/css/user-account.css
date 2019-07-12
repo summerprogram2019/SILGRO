@@ -1,0 +1,81 @@
+#left-menu{
+    position: absolute;
+    width: 180px;
+    left: 40px;
+    margin-top: 160px;
+    font-family: roboto;
+}
+#left-menu ul{
+    list-style: none;
+    margin-left: -20px;
+}
+#left-menu ul li{
+    margin-top: 15px;
+}
+#left-menu ul li a{
+    opacity: 0.6;
+    color: black;
+    text-decoration: none;
+}
+#right-content{
+    position: absolute;
+    left: 280px;
+    top: 170px;
+    width: 60%;
+    height: 60%;
+    font-family: Roboto;
+}
+#profile-pic{
+    margin: 0;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    float: left;
+    margin-right: 20px;
+}
+#profile-pic img{
+    max-height: 100%;
+    width: auto;
+}
+#right-content h1{
+    margin-top: 0px;
+    font-size: 1.8em;
+}
+#right-content h2{
+    font-size: 1.2em;
+}
+#listing{
+    width: 80%;
+    height: 100px;
+    font-family: Roboto;
+    border-bottom: 1px grey solid;
+}
+#listing-image{
+    margin: 0;
+    background-color: white;
+    width: 90px;
+    height: 90;
+    overflow: hidden;
+    float: left;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+#listing-image img{
+    height: 100px;
+    width: auto;
+    float: left;
+}
+#listing h1{
+    margin-bottom: 0;
+}
+#listing h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.1em;
+}
+#listing h3{
+    margin-top: 0;
+    margin-bottom: 5px;
+}

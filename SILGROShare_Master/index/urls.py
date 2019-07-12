@@ -15,6 +15,7 @@ urlpatterns = [
     #newListing
     path('newListing.html',views.newListing),
     #navbar
-    path('navbar.html',views.navbar)
+    path('navbar.html',views.navbar),
+    path('create-account.html',views.createAccount)
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
