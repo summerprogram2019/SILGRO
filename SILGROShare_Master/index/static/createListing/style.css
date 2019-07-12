@@ -1,3 +1,7 @@
+#compLogo2 {
+    width: 100px;
+}
+
 #myAccount {
 	position: absolute;
 	right: 25px;
@@ -6,9 +10,9 @@
 }
 
 #profile {
-	width: 30px;
+	width: 40px;
 	position: absolute;
-	right: 120px;
+	right: 110px;
 }
 
 body {
@@ -17,7 +21,8 @@ body {
 }
 
 #heading {
-	margin: 30px;
+	margin: 80px;
+	margin-bottom: 0px;
 }
 
 #newList {
@@ -34,8 +39,143 @@ body {
    margin:0 auto;
 }
 
+textarea {
+    outline: none;
+    resize: none;
+    overflow: auto;
+}
+
 #calendar {
 	float: left;
+}
+
+
+
+
+article
+{
+    width: 80%;
+    margin: 0px;
+    margin-top:10px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 15px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 800px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.thumbnail{
+
+    height: 100px;
+    margin: 10px;
+}
+
+
+
+
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: black;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 td {
@@ -44,6 +184,49 @@ td {
 
 #ui-datepicker-div {
 	background-color: white;
+	float: left;
+}
+
+#ui-datepicker2-div {
+	background-color: white;
+	float: left;
+}
+
+#blah {
+    width: 180px;
+}
+
+#blah2 {
+    width: 180px;
+}
+
+.sd-container {
+  position: relative;
+  float: left;
+}
+
+.sd {
+  border: 0.5px solid grey;
+  padding: 10px 12px;
+  height: 30px;
+  width: 180px;
+  margin: 10px;
+  input-decoration: none;
+}
+
+.open-button {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  pointer-events: none;
+}
+
+.open-button button {
+  border: none;
+  background: transparent;
 }
 
 input[type=file]{
@@ -54,8 +237,8 @@ background:#2d2d2d;}
 	background-color: white;
 }
 
-#pls {
-	width: 50%;
+#back2 {
+	background-color: white;
 }
 
 #rest {
@@ -64,11 +247,14 @@ background:#2d2d2d;}
 }
 
 footer {
+    padding-top: 50px;
 	clear: both;
     position: relative;
     width: 100%;
-    height: 100px;
-    bottom: -200px;
+    height: 330px;
+    bottom: -100px;
+    color: black;
+    background-color: #f5f3f1;
 }
 
 .column {
@@ -79,6 +265,10 @@ footer {
 .lists {
   list-style-type: none;
   padding-left: 10px;
+  color: black;
+}
+.row h2 {
+    color: black;
 }
 
 a {
@@ -93,13 +283,12 @@ a:hover {
 	margin: 20px;
 	margin-left: 100px;
 	color: black;
+
 }
 
 #compLogo {
 	width: 200px;
-	padding: 0;
-	margin: 0;
-	margin-bottom: 40px;
+	margin: 50px 50px 0px 0px;
 }
 
 .socials {
@@ -116,7 +305,7 @@ a:hover {
 #lastBox {
 	margin: 0;
 	padding: 4px;
-	background-color: black;
+	background-color: #c9c9c9;
 }
 
 #lastLine {
