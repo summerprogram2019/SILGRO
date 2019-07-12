@@ -43,17 +43,21 @@ def newListing(request):
         title = request.POST.get('title')
         description = request.POST.get('description')
         availability = request.POST.get('availability')
+        a = availability
+        availability = a[6:] + '-' + a[0:2] + '-' + a[3:5]
         rate = request.POST.get('rate')
-        img = Img(img_url=request.FILES.get('img'))
-        images = request.FILES.get('img')
-        img.save()
         db = Listing()
+        img = Img(img_url=request.FILES.get('img'))
+        db.images = img
+        #  images = request.FILES.get('img')
+        img.save()
+
         db.title = title
         db.availability = availability
         db.category = category
         db.description = description
         db.rate = rate
-       # db.images = images
+        # db.images = images
         db.save()
         return HttpResponse("Submit Successfully!")
 
@@ -96,3 +100,19 @@ def createAccount(request):
         account.password = password
         account.save()
         return HttpResponse("Submit Successfully!")
+
+def searchResult(request):
+    if request.method == 'GET':
+        return render(request, 'listings.html', context=locals(), status=500)
+    else:
+        category = request.POST.get('category')
+        search = request.POST.get('search')
+        startDate = request.POST.get('startDate')
+        endDate = request.POST.get('endDate')
+        location = request.POST.get('location')
+        imgs1=Img.objects.all().filter(img_url__contains=search)
+        imgs2=Img.objects.all()[4:]
+        inf = Listing.objects.filter(images__contains=search)
+        p = len(inf)
+        resultNumber = str(p)+" "+"listings found for "+search
+        return render(request, 'listings.html', context=locals(), status=500)
